@@ -26,7 +26,14 @@ multiplyBtn.addEventListener('click', function() {
 divideBtn.addEventListener('click', function() {
     let userInput = GetInput();
     if (!isNaN(userInput)) {
-        OperateAndPrintResult('/', userInput);
+        if (userInput != 0) {
+            OperateAndPrintResult('/', userInput);
+        } else {
+            toastr.options.positionClass = 'toast-top-center';
+            toastr.options.progressBar = true;
+            toastr.options.timeOut = '1000'
+            toastr.warning('Cannot divide by 0');
+        }
     }
 });
 

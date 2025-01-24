@@ -33,16 +33,16 @@ divideBtn.addEventListener('click', function() {
 function OperateAndPrintResult(operation, userInput) {
     switch(operation) {
         case '+':
-            curResult += parseInt(userInput);
+            curResult += parseFloat(userInput);
             break;
         case '-':
-            curResult -= parseInt(userInput);
+            curResult -= parseFloat(userInput);
             break;
         case '*':
-            curResult *= parseInt(userInput);
+            curResult *= parseFloat(userInput);
             break;
         case '/':
-            curResult /= parseInt(userInput);
+            curResult /= parseFloat(userInput);
             break;
     }
     curCalculation = `(${curCalculation} ${operation} ${userInput})`;
@@ -52,6 +52,3 @@ function OperateAndPrintResult(operation, userInput) {
 function GetInput() {
     return userInput.value;
 }
-
-
-// Investigate why not working with decimals
